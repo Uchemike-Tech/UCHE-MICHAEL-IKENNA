@@ -1,65 +1,60 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/BrandIcons";
-import bg from "@/assets/bg-contact.jpg";
 
 export function Contact() {
   return (
-    <section id="contact" className="relative py-24 md:py-32 px-4 sm:px-6 overflow-hidden">
-      <img src={bg} alt="" aria-hidden loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-40 -z-10" />
+    <section id="contact" className="relative py-28 md:py-40 px-6">
+      <div className="absolute inset-0 bg-radial-glow -z-10" />
       <div className="mx-auto max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-blue text-white border-2 border-ink rounded-3xl p-8 md:p-14 shadow-pop relative overflow-hidden"
+          className="text-center mb-16"
         >
-          <div className="absolute top-6 right-6 h-16 w-16 rounded-full bg-yellow border-2 border-ink hidden md:block" />
-          <div className="absolute bottom-6 right-24 h-10 w-10 rounded bg-red border-2 border-ink rotate-12 hidden md:block" />
-
-          <span className="chip !text-foreground">/ Let's build</span>
-          <h2 className="mt-4 font-display text-4xl md:text-6xl font-bold leading-[1] max-w-2xl">
-            Got a problem worth solving?
+          <div className="font-mono-jb text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
+            Contact
+          </div>
+          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.03em] leading-[1.02] max-w-3xl mx-auto text-balance">
+            Have a project worth <span className="font-serif-i italic text-muted-foreground">solving?</span>
           </h2>
-          <p className="mt-5 max-w-xl text-white/90 text-lg">
-            I'm taking on new clients for AI/ML, automation, and analytics projects.
-            Replies within 24 hours.
+          <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto">
+            I'm taking on a small number of new engagements this quarter. Tell me about
+            the problem — replies within 24 hours.
           </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-9 inline-flex flex-wrap items-center justify-center gap-3">
             <a
               href="mailto:uchemichaelbartholomew@gmail.com"
-              className="inline-flex items-center gap-2 bg-yellow text-foreground border-2 border-ink px-6 py-3 rounded-full font-semibold shadow-pop hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform"
+              className="btn-primary inline-flex items-center gap-1.5"
             >
-              <Mail size={18} /> Send an email <ArrowUpRight size={14} />
+              Start a conversation <ArrowUpRight size={14} />
             </a>
             <a
               href="https://www.linkedin.com/in/michael-uche-731835368/"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-foreground border-2 border-ink px-6 py-3 rounded-full font-semibold shadow-pop hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform"
+              className="btn-ghost inline-flex items-center gap-2"
             >
-              <LinkedinIcon size={16} /> LinkedIn
+              <LinkedinIcon size={14} /> LinkedIn
             </a>
           </div>
         </motion.div>
 
-        <div className="mt-6 grid sm:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border hairline">
           {[
-            { Icon: Mail, label: "Email", value: "uchemichaelbartholomew@gmail.com", href: "mailto:uchemichaelbartholomew@gmail.com", bg: "bg-yellow" },
-            { Icon: Phone, label: "Phone", value: "+234 813 200 3036", href: "tel:+2348132003036", bg: "bg-red text-white" },
-            { Icon: MapPin, label: "Location", value: "Lagos, Nigeria · Remote-ready", bg: "bg-blue text-white" },
+            { Icon: Mail, label: "Email", value: "uchemichaelbartholomew@gmail.com", href: "mailto:uchemichaelbartholomew@gmail.com" },
+            { Icon: Phone, label: "Phone", value: "+234 813 200 3036", href: "tel:+2348132003036" },
+            { Icon: MapPin, label: "Location", value: "Lagos, Nigeria · Remote-ready" },
           ].map((c) => (
             <a
               key={c.label}
               href={c.href}
-              className="bg-white border-2 border-ink rounded-2xl p-5 shadow-pop hover:translate-y-[-4px] transition-transform block"
+              className="bg-background p-6 hover:bg-surface/50 transition-colors block group"
             >
-              <div className={`inline-grid place-items-center h-9 w-9 rounded-full border-2 border-ink ${c.bg} mb-3`}>
-                <c.Icon size={16} />
-              </div>
-              <div className="font-mono-jb text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{c.label}</div>
-              <div className="text-sm font-semibold break-words">{c.value}</div>
+              <c.Icon size={16} className="text-muted-foreground group-hover:text-accent transition-colors mb-4" />
+              <div className="font-mono-jb text-[10px] uppercase tracking-[0.14em] text-muted-foreground mb-1.5">{c.label}</div>
+              <div className="text-sm font-medium break-words">{c.value}</div>
             </a>
           ))}
         </div>
@@ -70,15 +65,16 @@ export function Contact() {
 
 export function Footer() {
   return (
-    <footer className="border-t-2 border-ink py-8 px-4 sm:px-6 bg-foreground text-background">
-      <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="font-display font-bold text-lg">
-          Michael<span className="text-yellow">.</span>
+    <footer className="border-t hairline py-10 px-6">
+      <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-5">
+        <div className="flex items-center gap-2.5">
+          <span className="inline-grid place-items-center h-6 w-6 rounded-md bg-foreground text-background text-[10px] font-semibold">M</span>
+          <span className="text-sm">Michael Uche</span>
         </div>
-        <div className="text-xs opacity-70 font-mono-jb">
-          © {new Date().getFullYear()} Uche Michael Ikenna · Built with care.
+        <div className="text-xs text-muted-foreground font-mono-jb">
+          © {new Date().getFullYear()} Uche Michael Ikenna · All rights reserved.
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-1">
           {[
             { Icon: GithubIcon, href: "https://github.com/Uchemike-Tech", label: "GitHub" },
             { Icon: LinkedinIcon, href: "https://www.linkedin.com/in/michael-uche-731835368/", label: "LinkedIn" },
@@ -90,7 +86,7 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label={label}
-              className="h-9 w-9 grid place-items-center rounded-full border-2 border-background hover:bg-yellow hover:text-foreground hover:border-ink transition-colors"
+              className="h-9 w-9 grid place-items-center rounded-full text-muted-foreground hover:text-foreground hover:bg-surface transition-colors"
             >
               <Icon size={14} />
             </a>

@@ -1,85 +1,79 @@
 import { motion } from "framer-motion";
-import bg from "@/assets/bg-experience.jpg";
 
 const roles = [
   {
-    period: "Jan 2019 – Present",
+    period: "2019 — Present",
     title: "Senior AI & Automation Consultant",
-    org: "Freelance",
-    color: "bg-blue text-white",
+    org: "Independent Practice",
     points: [
-      "Designed & deployed 25+ ML models, achieving 30–50% efficiency gains.",
+      "Designed and deployed 25+ ML models, achieving 30–50% efficiency gains.",
       "Engineered ETL pipelines processing 500K+ daily transactions.",
-      "Managed 30+ clients across retail, healthcare, finance, logistics.",
+      "Managed 30+ clients across retail, healthcare, finance, and logistics — 95% retention.",
     ],
   },
   {
-    period: "Mar 2019 – Dec 2024",
+    period: "2019 — 2024",
     title: "Lead Data Analyst & ML Researcher",
     org: "Self-Employed",
-    color: "bg-red text-white",
     points: [
       "Implemented ML algorithms reaching 92% average model accuracy.",
       "Built executive dashboards tracking 50+ KPIs — surfaced $2M+ in savings.",
-      "Lifted data accuracy from 75% → 97% via governance frameworks.",
+      "Lifted data accuracy from 75% to 97% through governance frameworks.",
     ],
   },
   {
-    period: "Jun 2019 – Present",
+    period: "2019 — Present",
     title: "Data Collection & QA Specialist",
     org: "Independent / Remote",
-    color: "bg-yellow text-foreground",
     points: [
       "Curated 10,000+ images and datasets for ML training pipelines.",
       "Maintained 99% data accuracy across 50,000+ annotated points.",
     ],
   },
   {
-    period: "Mar 2019 – Dec 2021",
+    period: "2019 — 2021",
     title: "Computer Instructor & Trainer",
     org: "Sacred Heart Computer & Vocational Centre",
-    color: "bg-foreground text-background",
     points: [
       "Trained 150+ students with 95% satisfaction, 85% certification rate.",
-      "Authored 20+ SOPs and training guides; ran lab for 50+ users.",
+      "Authored 20+ SOPs and training guides for software tools.",
     ],
   },
 ];
 
 export function Experience() {
   return (
-    <section id="experience" className="relative py-24 md:py-32 px-4 sm:px-6 overflow-hidden">
-      <img src={bg} alt="" aria-hidden loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-20 -z-10" />
+    <section id="experience" className="relative py-28 md:py-40 px-6">
       <div className="mx-auto max-w-5xl">
-        <div className="max-w-3xl mb-12">
-          <span className="chip">/ Experience</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl font-bold">
-            6+ years <span className="text-red">in the trenches</span>.
+        <div className="mb-16">
+          <div className="font-mono-jb text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
+            Experience
+          </div>
+          <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05] max-w-3xl">
+            Six years building <span className="font-serif-i italic text-muted-foreground">things that ship.</span>
           </h2>
         </div>
 
-        <div className="space-y-5">
+        <div>
           {roles.map((r, i) => (
             <motion.div
               key={r.title}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="bg-white border-2 border-ink rounded-2xl p-6 shadow-pop grid md:grid-cols-[200px_1fr] gap-5"
+              transition={{ delay: i * 0.06 }}
+              className="grid md:grid-cols-[180px_1fr] gap-6 md:gap-12 py-8 border-t hairline last:border-b"
             >
-              <div>
-                <div className={`inline-block ${r.color} border-2 border-ink rounded-full px-3 py-1 font-mono-jb text-[10px] uppercase tracking-widest`}>
-                  {r.period}
-                </div>
+              <div className="font-mono-jb text-xs text-muted-foreground pt-1">
+                {r.period}
               </div>
               <div>
-                <h3 className="font-display text-xl font-bold">{r.title}</h3>
-                <div className="text-sm text-muted-foreground mb-3">{r.org}</div>
-                <ul className="space-y-1.5">
+                <h3 className="font-display text-xl md:text-2xl font-semibold tracking-tight">{r.title}</h3>
+                <div className="text-sm text-muted-foreground mt-1 mb-4">{r.org}</div>
+                <ul className="space-y-2 max-w-2xl">
                   {r.points.map((p) => (
-                    <li key={p} className="text-sm flex gap-2">
-                      <span className="text-blue mt-1">▸</span>
+                    <li key={p} className="text-[15px] text-foreground/80 leading-relaxed flex gap-3">
+                      <span className="text-accent mt-2 shrink-0">·</span>
                       <span>{p}</span>
                     </li>
                   ))}
@@ -89,14 +83,18 @@ export function Experience() {
           ))}
         </div>
 
-        <div className="mt-10 bg-foreground text-background border-2 border-ink rounded-2xl p-6 shadow-pop grid md:grid-cols-[1fr_auto] gap-3 items-center">
+        <div className="mt-16 grid md:grid-cols-[180px_1fr] gap-6 md:gap-12 py-8 border-t hairline">
+          <div className="font-mono-jb text-xs text-muted-foreground pt-1">2020 — 2025</div>
           <div>
-            <div className="font-mono-jb text-[11px] uppercase tracking-widest text-yellow mb-1">/ Education</div>
-            <div className="font-display text-xl font-bold">B.Sc. Computer Science</div>
-            <div className="text-sm opacity-70">Federal University of Technology, Owerri · 2020 – 2025</div>
-          </div>
-          <div className="text-xs opacity-70 md:text-right">
-            ML · Data Structures · AI · Software Engineering
+            <div className="font-mono-jb text-[10px] uppercase tracking-[0.14em] text-accent mb-2">Education</div>
+            <h3 className="font-display text-xl md:text-2xl font-semibold tracking-tight">B.Sc. Computer Science</h3>
+            <div className="text-sm text-muted-foreground mt-1">
+              Federal University of Technology, Owerri
+            </div>
+            <p className="text-sm text-muted-foreground mt-3 max-w-2xl">
+              Coursework: Machine Learning, Data Structures &amp; Algorithms, Database Systems,
+              Artificial Intelligence, Statistical Analysis, Software Engineering.
+            </p>
           </div>
         </div>
       </div>
