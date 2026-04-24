@@ -1,121 +1,120 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/BrandIcons";
 import portrait from "@/assets/michael-portrait.jpg";
+import bg from "@/assets/bg-hero.jpg";
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
-      <div className="absolute inset-0 grid-bg opacity-50 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
-      <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-primary/10 blur-3xl" />
-      <div className="absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-accent/10 blur-3xl" />
+    <section id="home" className="relative pt-32 pb-20 px-4 sm:px-6 overflow-hidden">
+      <img
+        src={bg}
+        alt=""
+        aria-hidden
+        className="absolute inset-0 h-full w-full object-cover opacity-70 -z-10"
+      />
+      {/* playful shapes */}
+      <div className="absolute top-32 right-10 h-20 w-20 rounded-full bg-yellow border-2 border-ink hidden md:block" />
+      <div className="absolute bottom-20 left-12 h-16 w-16 rounded bg-red border-2 border-ink rotate-12 hidden md:block" />
 
-      <div className="relative mx-auto max-w-6xl px-6 grid md:grid-cols-[1.3fr_1fr] gap-12 items-center">
+      <div className="relative mx-auto max-w-6xl grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-16 items-center">
         <div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-6"
+            className="chip"
           >
-            <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-            <span className="font-mono-jb text-xs uppercase tracking-widest text-muted-foreground">
-              Available for new projects
-            </span>
-          </motion.div>
+            <span className="h-1.5 w-1.5 rounded-full bg-red animate-pulse" />
+            Available for projects
+          </motion.span>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight"
+            transition={{ delay: 0.1 }}
+            className="mt-5 font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.02]"
           >
-            Building <span className="text-gradient">intelligent</span><br />
-            systems that <span className="italic font-light">scale.</span>
+            Hi, I'm <span className="text-blue">Michael</span>.
+            <br />I build <span className="bg-yellow px-2 -rotate-1 inline-block border-2 border-ink rounded-md">smart things</span> with data.
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
-            className="mt-7 max-w-xl text-lg text-muted-foreground leading-relaxed"
+            transition={{ delay: 0.2 }}
+            className="mt-6 max-w-xl text-lg text-muted-foreground"
           >
-            I'm <span className="text-foreground font-medium">Michael Uche</span> — an AI/ML engineer, web developer, and data analyst with 6+ years
-            shipping production ML, automation, and analytics that drive 30–50% efficiency gains.
+            AI/ML engineer, web developer & data analyst with 6+ years shipping
+            machine learning, automation, and analytics that drive real results.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-9 flex flex-wrap items-center gap-4"
+            transition={{ delay: 0.3 }}
+            className="mt-8 flex flex-wrap items-center gap-3"
           >
             <a
               href="#projects"
-              className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:glow transition-all"
+              className="inline-flex items-center gap-2 bg-blue text-white border-2 border-ink px-6 py-3 rounded-full font-semibold shadow-pop hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform"
             >
-              View my work
-              <ArrowDown size={16} className="group-hover:translate-y-0.5 transition-transform" />
+              See my work <ArrowRight size={16} />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 glass px-6 py-3 rounded-full font-medium hover:bg-secondary transition-all"
+              className="inline-flex items-center gap-2 bg-white border-2 border-ink px-6 py-3 rounded-full font-semibold shadow-pop hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform"
             >
-              Let's talk →
+              Say hello
             </a>
-
-            <div className="flex items-center gap-1 ml-2">
-              {[
-                { Icon: GithubIcon, href: "https://github.com/Uchemike-Tech" },
-                { Icon: LinkedinIcon, href: "https://www.linkedin.com/in/michael-uche-731835368/" },
-                { Icon: Mail, href: "mailto:uchemichaelbartholomew@gmail.com" },
-              ].map(({ Icon, href }, i) => (
-                <a
-                  key={i}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="h-10 w-10 grid place-items-center rounded-full hover:bg-secondary text-muted-foreground hover:text-primary transition-all"
-                >
-                  <Icon size={18} />
-                </a>
-              ))}
-            </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7, duration: 1 }}
-            className="mt-12 grid grid-cols-3 gap-6 max-w-md"
-          >
+          <div className="mt-7 flex gap-2">
             {[
-              { v: "6+", l: "Years experience" },
-              { v: "25+", l: "ML models shipped" },
-              { v: "30+", l: "Happy clients" },
+              { Icon: GithubIcon, href: "https://github.com/Uchemike-Tech", label: "GitHub" },
+              { Icon: LinkedinIcon, href: "https://www.linkedin.com/in/michael-uche-731835368/", label: "LinkedIn" },
+              { Icon: Mail, href: "mailto:uchemichaelbartholomew@gmail.com", label: "Email" },
+            ].map(({ Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                className="h-10 w-10 grid place-items-center rounded-full border-2 border-ink bg-white hover:bg-yellow transition-colors"
+              >
+                <Icon size={16} />
+              </a>
+            ))}
+          </div>
+
+          <div className="mt-10 grid grid-cols-3 gap-4 max-w-md">
+            {[
+              { v: "6+", l: "years", c: "text-blue" },
+              { v: "25+", l: "ML models", c: "text-red" },
+              { v: "30+", l: "clients", c: "text-foreground" },
             ].map((s) => (
-              <div key={s.l}>
-                <div className="font-display text-3xl font-bold text-primary">{s.v}</div>
-                <div className="text-xs text-muted-foreground mt-1">{s.l}</div>
+              <div key={s.l} className="bg-white border-2 border-ink rounded-2xl p-3 shadow-pop">
+                <div className={`font-display text-3xl font-bold ${s.c}`}>{s.v}</div>
+                <div className="text-xs text-muted-foreground">{s.l}</div>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6 }}
           className="relative mx-auto"
         >
-          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-primary/40 via-accent/20 to-transparent blur-2xl" />
-          <div className="relative aspect-[4/5] w-72 sm:w-80 md:w-full max-w-sm rounded-[2rem] overflow-hidden border border-white/10 glow">
+          {/* yellow backplate */}
+          <div className="absolute inset-0 translate-x-3 translate-y-3 bg-yellow border-2 border-ink rounded-[2rem]" />
+          <div className="relative aspect-[4/5] w-64 sm:w-72 md:w-full max-w-xs rounded-[2rem] overflow-hidden border-2 border-ink bg-white">
             <img src={portrait} alt="Michael Ikenna Uche" className="h-full w-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-            <div className="absolute bottom-5 left-5 right-5 glass rounded-xl p-3">
-              <div className="font-mono-jb text-[10px] uppercase tracking-widest text-primary">Currently</div>
-              <div className="text-sm font-medium mt-0.5">Crafting AI · Lagos, NG 🇳🇬</div>
-            </div>
+          </div>
+          <div className="absolute -bottom-4 -left-4 bg-red text-white border-2 border-ink rounded-2xl px-3 py-2 shadow-pop -rotate-3">
+            <div className="font-mono-jb text-[10px] uppercase tracking-widest opacity-80">Based in</div>
+            <div className="font-bold text-sm">Lagos 🇳🇬</div>
           </div>
         </motion.div>
       </div>
