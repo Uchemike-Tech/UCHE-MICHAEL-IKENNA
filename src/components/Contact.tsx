@@ -42,7 +42,7 @@ export function Contact() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 border border-neon-foreground/30 text-neon-foreground px-6 py-3.5 rounded-full font-medium hover:bg-neon-foreground/10 transition-all"
               >
-                <Linkedin size={18} /> LinkedIn
+                <LinkedinIcon size={18} /> LinkedIn
               </a>
             </div>
           </div>
@@ -81,8 +81,8 @@ export function Footer() {
           © {new Date().getFullYear()} Uche Michael Ikenna · Crafted with care.
         </div>
         <div className="flex gap-3">
-          <a href="https://github.com/Uchemike-Tech" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary"><Github size={18} /></a>
-          <a href="https://www.linkedin.com/in/michael-uche-731835368/" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary"><Linkedin size={18} /></a>
+          <a href="https://github.com/Uchemike-Tech" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary"><GithubIcon size={18} /></a>
+          <a href="https://www.linkedin.com/in/michael-uche-731835368/" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary"><LinkedinIcon size={18} /></a>
           <a href="mailto:uchemichaelbartholomew@gmail.com" className="text-muted-foreground hover:text-primary"><Mail size={18} /></a>
         </div>
       </div>
