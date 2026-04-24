@@ -66,8 +66,8 @@ export function Hero() {
 
             <div className="flex items-center gap-1 ml-2">
               {[
-                { Icon: Github, href: "https://github.com/Uchemike-Tech" },
-                { Icon: Linkedin, href: "https://www.linkedin.com/in/michael-uche-731835368/" },
+                { Icon: GithubIcon, href: "https://github.com/Uchemike-Tech" },
+                { Icon: LinkedinIcon, href: "https://www.linkedin.com/in/michael-uche-731835368/" },
                 { Icon: Mail, href: "mailto:uchemichaelbartholomew@gmail.com" },
               ].map(({ Icon, href }, i) => (
                 <a
