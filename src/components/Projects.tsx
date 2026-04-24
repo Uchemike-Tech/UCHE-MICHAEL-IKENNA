@@ -1,89 +1,106 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import bg from "@/assets/bg-projects.jpg";
+import imgChurn from "@/assets/proj-churn.jpg";
+import imgSales from "@/assets/proj-sales.jpg";
+import imgAuto from "@/assets/proj-automation.jpg";
+import imgVision from "@/assets/proj-vision.jpg";
+import imgNlp from "@/assets/proj-nlp.jpg";
+import imgEtl from "@/assets/proj-etl.jpg";
 
 const projects = [
   {
+    img: imgChurn,
     tag: "Machine Learning",
-    title: "AI-Powered Customer Churn Prediction",
-    desc: "Random Forest + XGBoost classifier hitting 91% accuracy. Early-warning system that cut churn by 28% for a telecom client. Automated preprocessing pipeline for 50K+ records monthly.",
-    stats: ["91% accuracy", "28% churn reduction", "50K records/mo"],
-    color: "from-primary/20 to-accent/10",
+    tagBg: "bg-blue",
+    title: "Customer Churn Prediction",
+    desc: "Random Forest + XGBoost classifier hitting 91% accuracy. Cut churn by 28% for a telecom client.",
+    stats: ["91% accuracy", "−28% churn", "50K records/mo"],
   },
   {
-    tag: "Business Intelligence",
-    title: "Sales Performance Analytics Dashboard",
-    desc: "Power BI dashboard integrating 5+ data sources for real-time sales tracking and quarterly forecasting. Boosted client revenue by 20% and improved sales-team efficiency by 35%.",
-    stats: ["+20% revenue", "+35% efficiency", "87% forecast accuracy"],
-    color: "from-accent/20 to-primary/10",
+    img: imgSales,
+    tag: "BI Dashboard",
+    tagBg: "bg-red",
+    title: "Sales Analytics Dashboard",
+    desc: "Power BI dashboard integrating 5+ data sources for real-time sales tracking and forecasting.",
+    stats: ["+20% revenue", "+35% efficiency", "87% forecast"],
   },
   {
+    img: imgAuto,
     tag: "Automation",
-    title: "Automated Expense Management System",
-    desc: "Python automation handling expense categorization, anomaly detection, and financial reporting. Reduced manual data entry by 90% and eliminated 95% of human errors.",
-    stats: ["−90% manual work", "−95% errors", "15+ hrs saved/mo"],
-    color: "from-primary/15 to-accent/15",
+    tagBg: "bg-yellow",
+    title: "Expense Management System",
+    desc: "Python automation for expense categorization, anomaly detection, and reporting.",
+    stats: ["−90% manual work", "−95% errors", "15+ hrs/mo"],
   },
   {
+    img: imgVision,
     tag: "Computer Vision",
-    title: "CNN Defect Detection System",
-    desc: "Convolutional neural network for quality control in manufacturing. Achieved 94% defect-detection accuracy and reduced inspection time by 70%, processing 1,000+ images daily.",
-    stats: ["94% accuracy", "−70% inspection time", "1k+ images/day"],
-    color: "from-accent/15 to-primary/20",
+    tagBg: "bg-blue",
+    title: "CNN Defect Detection",
+    desc: "CNN model for quality control in manufacturing, processing 1,000+ images daily.",
+    stats: ["94% accuracy", "−70% inspection", "1k+ imgs/day"],
   },
   {
+    img: imgNlp,
     tag: "NLP",
+    tagBg: "bg-red",
     title: "Sentiment Analysis Tool",
-    desc: "Brand reputation NLP model analyzing 100K+ customer reviews and social posts with 89% classification accuracy. Insights led to a 15% lift in customer satisfaction scores.",
+    desc: "NLP model analyzing 100K+ reviews and social posts for brand reputation insights.",
     stats: ["100K+ docs", "89% accuracy", "+15% CSAT"],
-    color: "from-primary/20 to-accent/20",
   },
   {
+    img: imgEtl,
     tag: "Data Engineering",
+    tagBg: "bg-yellow",
     title: "ETL Pipeline Architecture",
-    desc: "Engineered enterprise ETL pipelines handling 500K+ daily transactions across retail, healthcare, finance, and logistics — reducing data processing time by 60%.",
-    stats: ["500K txns/day", "−60% processing", "98% data accuracy"],
-    color: "from-accent/20 to-primary/15",
+    desc: "Enterprise pipelines handling 500K+ daily transactions across multiple sectors.",
+    stats: ["500K txns/day", "−60% latency", "98% accuracy"],
   },
 ];
 
 export function Projects() {
   return (
-    <section id="projects" className="relative py-24 md:py-32 px-6">
+    <section id="projects" className="relative py-24 md:py-32 px-4 sm:px-6 overflow-hidden">
+      <img src={bg} alt="" aria-hidden loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-30 -z-10" />
       <div className="mx-auto max-w-6xl">
-        <div className="mb-14">
-          <div className="font-mono-jb text-xs uppercase tracking-widest text-primary mb-3">/ Selected Work</div>
-          <h2 className="font-display text-4xl md:text-5xl font-bold max-w-3xl">
-            Projects that moved the <span className="text-gradient">needle</span>.
+        <div className="max-w-3xl mb-12">
+          <span className="chip">/ Selected work</span>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl font-bold">
+            Projects that moved the <span className="text-blue">needle</span>.
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => (
             <motion.article
               key={p.title}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: (i % 2) * 0.1 }}
-              className="group relative overflow-hidden rounded-3xl glass p-7 hover:border-primary/40 transition-all"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: (i % 3) * 0.08 }}
+              className="group bg-white border-2 border-ink rounded-2xl overflow-hidden shadow-pop hover:translate-y-[-4px] transition-transform flex flex-col"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${p.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              <div className="relative">
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <span className="font-mono-jb text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-full bg-primary/15 text-primary border border-primary/20">
+              <div className="aspect-video overflow-hidden border-b-2 border-ink bg-secondary">
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-5 flex-1 flex flex-col">
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <span className={`${p.tagBg} border-2 border-ink rounded-full px-2.5 py-0.5 font-mono-jb text-[10px] uppercase tracking-widest`}>
                     {p.tag}
                   </span>
-                  <ArrowUpRight className="text-muted-foreground group-hover:text-primary group-hover:rotate-12 transition-all" size={20} />
+                  <ArrowUpRight size={18} className="text-muted-foreground group-hover:text-blue group-hover:rotate-12 transition-all" />
                 </div>
-                <h3 className="font-display text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                  {p.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                  {p.desc}
-                </p>
-                <div className="flex flex-wrap gap-2">
+                <h3 className="font-display text-lg font-bold mb-2">{p.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">{p.desc}</p>
+                <div className="flex flex-wrap gap-1.5">
                   {p.stats.map((s) => (
-                    <span key={s} className="text-xs font-mono-jb px-2.5 py-1 rounded-md bg-background/50 border border-white/10">
+                    <span key={s} className="text-[11px] font-mono-jb px-2 py-0.5 rounded border border-ink/30 bg-secondary">
                       {s}
                     </span>
                   ))}
