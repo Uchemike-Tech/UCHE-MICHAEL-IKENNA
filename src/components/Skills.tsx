@@ -1,24 +1,21 @@
 import { motion } from "framer-motion";
 
-// Logos via cdn.simpleicons.org (brand color)
-type Skill = { name: string; slug: string; color?: string };
+type Skill = { name: string; slug: string };
 
-const groups: { title: string; bg: string; skills: Skill[] }[] = [
+const groups: { title: string; skills: Skill[] }[] = [
   {
     title: "Languages",
-    bg: "bg-blue",
     skills: [
       { name: "Python", slug: "python" },
       { name: "TypeScript", slug: "typescript" },
-      { name: "JavaScript", slug: "javascript" },
       { name: "SQL", slug: "mysql" },
       { name: "Java", slug: "openjdk" },
       { name: "R", slug: "r" },
+      { name: "JavaScript", slug: "javascript" },
     ],
   },
   {
     title: "AI / ML",
-    bg: "bg-red",
     skills: [
       { name: "TensorFlow", slug: "tensorflow" },
       { name: "PyTorch", slug: "pytorch" },
@@ -29,8 +26,7 @@ const groups: { title: string; bg: string; skills: Skill[] }[] = [
     ],
   },
   {
-    title: "Data & BI",
-    bg: "bg-yellow",
+    title: "Data & Analytics",
     skills: [
       { name: "Pandas", slug: "pandas" },
       { name: "NumPy", slug: "numpy" },
@@ -41,20 +37,7 @@ const groups: { title: string; bg: string; skills: Skill[] }[] = [
     ],
   },
   {
-    title: "Web",
-    bg: "bg-blue",
-    skills: [
-      { name: "React", slug: "react" },
-      { name: "Next.js", slug: "nextdotjs" },
-      { name: "Node.js", slug: "nodedotjs" },
-      { name: "Tailwind", slug: "tailwindcss" },
-      { name: "HTML5", slug: "html5" },
-      { name: "CSS3", slug: "css" },
-    ],
-  },
-  {
-    title: "Cloud & DevOps",
-    bg: "bg-red",
+    title: "Cloud & Infra",
     skills: [
       { name: "AWS", slug: "amazonwebservices" },
       { name: "Google Cloud", slug: "googlecloud" },
@@ -65,65 +48,86 @@ const groups: { title: string; bg: string; skills: Skill[] }[] = [
     ],
   },
   {
-    title: "Workflow",
-    bg: "bg-yellow",
+    title: "Web",
+    skills: [
+      { name: "React", slug: "react" },
+      { name: "Next.js", slug: "nextdotjs" },
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "Tailwind", slug: "tailwindcss" },
+      { name: "HTML5", slug: "html5" },
+      { name: "Vite", slug: "vite" },
+    ],
+  },
+  {
+    title: "Operations",
     skills: [
       { name: "Jira", slug: "jira" },
       { name: "Asana", slug: "asana" },
-      { name: "Trello", slug: "trello" },
       { name: "Notion", slug: "notion" },
       { name: "Slack", slug: "slack" },
       { name: "Figma", slug: "figma" },
+      { name: "Linear", slug: "linear" },
     ],
   },
 ];
 
 export function Skills() {
   return (
-    <section id="skills" className="relative py-24 md:py-32 px-4 sm:px-6 bg-secondary">
+    <section id="expertise" className="relative py-28 md:py-40 px-6 surface-2/30">
       <div className="mx-auto max-w-6xl">
-        <div className="max-w-3xl mb-12">
-          <span className="chip">/ Toolkit</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl font-bold">
-            Tools I use <span className="text-red">every day</span>.
-          </h2>
-          <p className="mt-4 text-muted-foreground text-lg">
-            Pragmatic stack — the right tool for the job, every time.
+        <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+          <div className="max-w-2xl">
+            <div className="font-mono-jb text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
+              Expertise
+            </div>
+            <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
+              The toolkit, <span className="font-serif-i italic text-muted-foreground">earned in production.</span>
+            </h2>
+          </div>
+          <p className="text-sm text-muted-foreground max-w-xs">
+            A pragmatic stack — chosen for reliability, observability, and team handoff.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border hairline">
           {groups.map((g, gi) => (
             <motion.div
               key={g.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: gi * 0.05 }}
-              className="bg-white border-2 border-ink rounded-2xl p-6 shadow-pop"
+              transition={{ delay: gi * 0.04 }}
+              className="bg-background p-7"
             >
-              <div className={`inline-block ${g.bg} border-2 border-ink rounded-full px-3 py-1 font-mono-jb text-[10px] uppercase tracking-widest mb-5`}>
-                {g.title}
+              <div className="flex items-center justify-between mb-6">
+                <div className="font-display text-sm font-medium">{g.title}</div>
+                <div className="font-mono-jb text-[10px] text-muted-foreground">
+                  {String(gi + 1).padStart(2, "0")}
+                </div>
               </div>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-3 gap-x-4 gap-y-5">
                 {g.skills.map((s) => (
                   <div
                     key={s.name}
-                    className="group flex flex-col items-center gap-2 p-2 rounded-xl border-2 border-transparent hover:border-ink hover:bg-secondary transition-all"
+                    className="group flex flex-col items-center gap-2.5"
                     title={s.name}
                   >
-                    <img
-                      src={`https://cdn.simpleicons.org/${s.slug}`}
-                      alt={s.name}
-                      width={32}
-                      height={32}
-                      loading="lazy"
-                      className="h-8 w-8 object-contain group-hover:scale-110 transition-transform"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).style.display = "none";
-                      }}
-                    />
-                    <span className="text-[11px] font-medium text-center leading-tight">{s.name}</span>
+                    <div className="h-10 w-10 grid place-items-center rounded-lg surface hairline border group-hover:border-strong group-hover:bg-surface-2 transition-all">
+                      <img
+                        src={`https://cdn.simpleicons.org/${s.slug}/ffffff`}
+                        alt={s.name}
+                        width={20}
+                        height={20}
+                        loading="lazy"
+                        className="h-5 w-5 object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).style.display = "none";
+                        }}
+                      />
+                    </div>
+                    <span className="text-[10.5px] text-muted-foreground text-center leading-tight">
+                      {s.name}
+                    </span>
                   </div>
                 ))}
               </div>

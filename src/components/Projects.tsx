@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import bg from "@/assets/bg-projects.jpg";
 import imgChurn from "@/assets/proj-churn.jpg";
 import imgSales from "@/assets/proj-sales.jpg";
 import imgAuto from "@/assets/proj-automation.jpg";
@@ -11,100 +10,109 @@ import imgEtl from "@/assets/proj-etl.jpg";
 const projects = [
   {
     img: imgChurn,
+    no: "01",
     tag: "Machine Learning",
-    tagBg: "bg-blue",
     title: "Customer Churn Prediction",
-    desc: "Random Forest + XGBoost classifier hitting 91% accuracy. Cut churn by 28% for a telecom client.",
-    stats: ["91% accuracy", "−28% churn", "50K records/mo"],
+    desc: "Random Forest + XGBoost classifier achieving 91% accuracy. Early-warning system reduced churn by 28% for a telecommunications client.",
+    stats: [["91%", "Accuracy"], ["−28%", "Churn"], ["50K", "Records / mo"]],
   },
   {
     img: imgSales,
-    tag: "BI Dashboard",
-    tagBg: "bg-red",
-    title: "Sales Analytics Dashboard",
-    desc: "Power BI dashboard integrating 5+ data sources for real-time sales tracking and forecasting.",
-    stats: ["+20% revenue", "+35% efficiency", "87% forecast"],
+    no: "02",
+    tag: "Business Intelligence",
+    title: "Sales Performance Dashboard",
+    desc: "Power BI dashboard integrating five upstream sources for real-time tracking and quarterly forecasting across the sales organisation.",
+    stats: [["+20%", "Revenue"], ["+35%", "Sales efficiency"], ["87%", "Forecast accuracy"]],
   },
   {
     img: imgAuto,
+    no: "03",
     tag: "Automation",
-    tagBg: "bg-yellow",
     title: "Expense Management System",
-    desc: "Python automation for expense categorization, anomaly detection, and reporting.",
-    stats: ["−90% manual work", "−95% errors", "15+ hrs/mo"],
+    desc: "Python automation handling expense categorisation, anomaly detection, and reporting — integrated with cloud storage for budget alerts.",
+    stats: [["−90%", "Manual entry"], ["−95%", "Errors"], ["15+ hrs", "Saved / mo"]],
   },
   {
     img: imgVision,
+    no: "04",
     tag: "Computer Vision",
-    tagBg: "bg-blue",
     title: "CNN Defect Detection",
-    desc: "CNN model for quality control in manufacturing, processing 1,000+ images daily.",
-    stats: ["94% accuracy", "−70% inspection", "1k+ imgs/day"],
+    desc: "Convolutional model deployed for quality control in manufacturing, processing 1,000+ images per day with real-time inference.",
+    stats: [["94%", "Accuracy"], ["−70%", "Inspection time"], ["1k+", "Images / day"]],
   },
   {
     img: imgNlp,
-    tag: "NLP",
-    tagBg: "bg-red",
-    title: "Sentiment Analysis Tool",
-    desc: "NLP model analyzing 100K+ reviews and social posts for brand reputation insights.",
-    stats: ["100K+ docs", "89% accuracy", "+15% CSAT"],
+    no: "05",
+    tag: "Natural Language",
+    title: "Sentiment Analysis Engine",
+    desc: "NLP pipeline analysing 100K+ customer reviews and social posts for brand reputation insights — informing product and support decisions.",
+    stats: [["100K+", "Documents"], ["89%", "Accuracy"], ["+15%", "CSAT lift"]],
   },
   {
     img: imgEtl,
+    no: "06",
     tag: "Data Engineering",
-    tagBg: "bg-yellow",
     title: "ETL Pipeline Architecture",
-    desc: "Enterprise pipelines handling 500K+ daily transactions across multiple sectors.",
-    stats: ["500K txns/day", "−60% latency", "98% accuracy"],
+    desc: "Enterprise pipelines moving 500K+ daily transactions across retail, healthcare, finance, and logistics — reducing latency 60%.",
+    stats: [["500K", "Txns / day"], ["−60%", "Latency"], ["98%", "Data accuracy"]],
   },
 ];
 
 export function Projects() {
   return (
-    <section id="projects" className="relative py-24 md:py-32 px-4 sm:px-6 overflow-hidden">
-      <img src={bg} alt="" aria-hidden loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-30 -z-10" />
+    <section id="work" className="relative py-28 md:py-40 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="max-w-3xl mb-12">
-          <span className="chip">/ Selected work</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl font-bold">
-            Projects that moved the <span className="text-blue">needle</span>.
-          </h2>
+        <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+          <div className="max-w-2xl">
+            <div className="font-mono-jb text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
+              Selected work
+            </div>
+            <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
+              Six projects, <span className="font-serif-i italic text-muted-foreground">measurable lift.</span>
+            </h2>
+          </div>
+          <p className="text-sm text-muted-foreground max-w-xs">
+            A cross-section of recent engagements. Numbers verified with clients.
+          </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden border hairline">
           {projects.map((p, i) => (
             <motion.article
               key={p.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: (i % 3) * 0.08 }}
-              className="group bg-white border-2 border-ink rounded-2xl overflow-hidden shadow-pop hover:translate-y-[-4px] transition-transform flex flex-col"
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ delay: (i % 2) * 0.08 }}
+              className="group bg-background p-7 hover:bg-surface/50 transition-colors"
             >
-              <div className="aspect-video overflow-hidden border-b-2 border-ink bg-secondary">
+              <div className="aspect-[16/10] rounded-xl overflow-hidden border hairline mb-6 bg-surface">
                 <img
                   src={p.img}
                   alt={p.title}
                   loading="lazy"
-                  className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="h-full w-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700"
                 />
               </div>
-              <div className="p-5 flex-1 flex flex-col">
-                <div className="flex items-start justify-between gap-3 mb-3">
-                  <span className={`${p.tagBg} border-2 border-ink rounded-full px-2.5 py-0.5 font-mono-jb text-[10px] uppercase tracking-widest`}>
-                    {p.tag}
-                  </span>
-                  <ArrowUpRight size={18} className="text-muted-foreground group-hover:text-blue group-hover:rotate-12 transition-all" />
+
+              <div className="flex items-start justify-between gap-4 mb-3">
+                <div className="flex items-center gap-3">
+                  <span className="font-mono-jb text-[10px] text-muted-foreground">{p.no}</span>
+                  <span className="font-mono-jb text-[10px] uppercase tracking-[0.14em] text-accent">{p.tag}</span>
                 </div>
-                <h3 className="font-display text-lg font-bold mb-2">{p.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">{p.desc}</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {p.stats.map((s) => (
-                    <span key={s} className="text-[11px] font-mono-jb px-2 py-0.5 rounded border border-ink/30 bg-secondary">
-                      {s}
-                    </span>
-                  ))}
-                </div>
+                <ArrowUpRight size={16} className="text-muted-foreground group-hover:text-foreground group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+              </div>
+
+              <h3 className="font-display text-2xl font-semibold tracking-tight mb-3">{p.title}</h3>
+              <p className="text-[15px] text-muted-foreground leading-relaxed mb-6">{p.desc}</p>
+
+              <div className="grid grid-cols-3 gap-4 border-t hairline pt-5">
+                {p.stats.map(([v, l]) => (
+                  <div key={l}>
+                    <div className="font-display text-lg font-semibold">{v}</div>
+                    <div className="text-[10.5px] uppercase tracking-[0.1em] text-muted-foreground mt-1">{l}</div>
+                  </div>
+                ))}
               </div>
             </motion.article>
           ))}

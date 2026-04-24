@@ -1,28 +1,26 @@
 const items = [
   "Machine Learning",
   "Computer Vision",
-  "NLP",
+  "Natural Language Processing",
   "Data Engineering",
-  "Power BI",
-  "Python",
-  "React",
-  "Automation",
   "MLOps",
-  "Cloud",
+  "Predictive Analytics",
+  "Business Intelligence",
+  "Process Automation",
 ];
 
 export function Marquee() {
   const all = [...items, ...items];
   return (
-    <div className="relative overflow-hidden border-y-2 border-ink py-5 bg-blue">
-      <div className="flex gap-10 animate-marquee whitespace-nowrap">
+    <div className="relative overflow-hidden border-y hairline py-8">
+      <div className="flex gap-12 animate-marquee whitespace-nowrap">
         {all.map((t, i) => (
           <span
             key={i}
-            className="font-display text-2xl md:text-3xl font-bold text-white flex items-center gap-10"
+            className="font-display text-base md:text-lg font-medium text-muted-foreground flex items-center gap-12"
           >
             {t}
-            <span className="text-yellow">★</span>
+            <span className="text-accent/60">/</span>
           </span>
         ))}
       </div>
