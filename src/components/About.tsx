@@ -1,48 +1,51 @@
 import { motion } from "framer-motion";
-import { Brain, Database, Zap, TrendingUp } from "lucide-react";
-import bg from "@/assets/bg-about.jpg";
 
-const pillars = [
-  { Icon: Brain, title: "AI / ML Engineering", desc: "End-to-end ML systems — from data pipelines to deployed inference.", color: "bg-blue text-white" },
-  { Icon: Database, title: "Data Analytics", desc: "Statistical modeling, BI dashboards, and insights that drive decisions.", color: "bg-red text-white" },
-  { Icon: Zap, title: "Automation", desc: "Python & RPA workflows that eliminate 15–20 hours of manual work weekly.", color: "bg-yellow text-foreground" },
-  { Icon: TrendingUp, title: "Business Impact", desc: "30–50% efficiency gains and $2M+ in identified savings across clients.", color: "bg-foreground text-background" },
+const principles = [
+  { n: "01", t: "Outcome-led", d: "Every model, dashboard, or pipeline ships against a measurable business KPI — never built for its own sake." },
+  { n: "02", t: "Production-first", d: "I optimise for systems that hold up in production: monitored, observable, and built to be handed off." },
+  { n: "03", t: "Quiet pragmatism", d: "Right-sized tooling. The simplest model that meets the bar wins, every time." },
+  { n: "04", t: "Tight feedback loops", d: "Weekly demos, working software early, decisions made on data — not opinions." },
 ];
 
 export function About() {
   return (
-    <section id="about" className="relative py-24 md:py-32 px-4 sm:px-6 overflow-hidden">
-      <img src={bg} alt="" aria-hidden loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-25 -z-10" />
+    <section id="about" className="relative py-28 md:py-40 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="max-w-3xl mb-12">
-          <span className="chip">/ About</span>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl font-bold leading-tight">
-            I turn messy data into <span className="text-blue">measurable outcomes</span>.
-          </h2>
-          <p className="mt-5 text-muted-foreground text-lg">
-            Based in Lagos, working with teams worldwide. I've built 25+ ML models,
-            engineered ETL pipelines handling 500K+ daily transactions, and shipped
-            20+ executive dashboards — focused on results you can put a number on.
-          </p>
-        </div>
+        <div className="grid md:grid-cols-[280px_1fr] gap-12 md:gap-20">
+          <div className="md:sticky md:top-32 self-start">
+            <div className="font-mono-jb text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
+              About
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-[1.1]">
+              Principles that shape <span className="font-serif-i italic text-muted-foreground">my work.</span>
+            </h2>
+          </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {pillars.map((p, i) => (
-            <motion.div
-              key={p.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="bg-white border-2 border-ink rounded-2xl p-6 shadow-pop hover:translate-y-[-4px] transition-transform"
-            >
-              <div className={`h-12 w-12 grid place-items-center rounded-xl border-2 border-ink ${p.color} mb-4`}>
-                <p.Icon size={20} />
-              </div>
-              <h3 className="font-display text-lg font-bold mb-2">{p.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-            </motion.div>
-          ))}
+          <div>
+            <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-12 max-w-2xl">
+              Based in Lagos, working with teams worldwide. I've delivered 25+ ML models,
+              engineered ETL pipelines moving 500K+ daily transactions, and shipped 20+
+              executive dashboards. The common thread is a focus on results that
+              decision-makers can act on.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-x-10 gap-y-10">
+              {principles.map((p, i) => (
+                <motion.div
+                  key={p.n}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="border-t hairline pt-5"
+                >
+                  <div className="font-mono-jb text-xs text-accent mb-3">{p.n}</div>
+                  <h3 className="font-display text-lg font-medium mb-2">{p.t}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{p.d}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

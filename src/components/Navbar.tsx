@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
+  { href: "#work", label: "Work" },
   { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Work" },
+  { href: "#expertise", label: "Expertise" },
   { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ];
@@ -14,7 +14,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 16);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -22,17 +22,17 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/85 backdrop-blur-md border-b border-border" : "bg-transparent"
+        scrolled ? "bg-background/70 backdrop-blur-xl border-b hairline" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex items-center justify-between">
-        <a href="#home" className="font-display text-xl font-bold flex items-center gap-2">
-          <span className="inline-grid place-items-center h-9 w-9 rounded-full bg-blue text-white text-sm shadow-pop border-2 border-ink">M</span>
-          <span>Michael<span className="text-red">.</span></span>
+      <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+        <a href="#home" className="flex items-center gap-2.5 font-medium">
+          <span className="inline-grid place-items-center h-7 w-7 rounded-md bg-foreground text-background text-xs font-semibold">M</span>
+          <span className="text-sm tracking-tight">Michael Uche</span>
         </a>
-        <nav className="hidden md:flex items-center gap-7 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-8 text-[13px] text-muted-foreground">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-blue transition-colors">
+            <a key={l.href} href={l.href} className="hover:text-foreground transition-colors">
               {l.label}
             </a>
           ))}
@@ -41,22 +41,22 @@ export function Navbar() {
           href="/Uche_Michael_Ikenna_Resume.pdf"
           target="_blank"
           rel="noreferrer"
-          className="hidden md:inline-flex bg-yellow text-foreground border-2 border-ink px-4 py-2 rounded-full font-semibold text-sm shadow-pop hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform"
+          className="hidden md:inline-flex btn-primary"
         >
-          Resume ↗
+          Resume
         </a>
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden grid place-items-center h-10 w-10 rounded-full border-2 border-ink bg-white"
+          className="md:hidden grid place-items-center h-9 w-9 rounded-full hairline-strong border bg-surface"
           aria-label="Toggle menu"
         >
-          {open ? <X size={18} /> : <Menu size={18} />}
+          {open ? <X size={16} /> : <Menu size={16} />}
         </button>
       </div>
       {open && (
-        <div className="md:hidden border-t border-border bg-white px-4 py-5 flex flex-col gap-3">
+        <div className="md:hidden border-t hairline bg-background/95 backdrop-blur-xl px-6 py-5 flex flex-col gap-3">
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="py-1 font-medium">
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-sm text-muted-foreground hover:text-foreground py-1">
               {l.label}
             </a>
           ))}
@@ -64,9 +64,9 @@ export function Navbar() {
             href="/Uche_Michael_Ikenna_Resume.pdf"
             target="_blank"
             rel="noreferrer"
-            className="bg-yellow text-foreground border-2 border-ink px-4 py-2 rounded-full font-semibold text-sm text-center mt-2 shadow-pop"
+            className="btn-primary text-center mt-2"
           >
-            Download Resume
+            Resume
           </a>
         </div>
       )}
