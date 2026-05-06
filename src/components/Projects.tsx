@@ -11,50 +11,50 @@ const projects = [
   {
     img: imgChurn,
     no: "01",
-    tag: "Machine Learning",
-    title: "Customer Churn Prediction",
-    desc: "Random Forest + XGBoost classifier achieving 91% accuracy. Early-warning system reduced churn by 28% for a telecommunications client.",
-    stats: [["91%", "Accuracy"], ["−28%", "Churn"], ["50K", "Records / mo"]],
+    tag: "Web",
+    title: "Customer Portal & Admin Dashboard",
+    desc: "React dashboard with role-based access and a Node.js API powering customer management, reporting, and notifications.",
+    stats: [["RBAC", "Auth"], ["REST", "API"], ["Postgres", "DB"]],
   },
   {
     img: imgSales,
     no: "02",
-    tag: "Business Intelligence",
-    title: "Sales Performance Dashboard",
-    desc: "Power BI dashboard integrating five upstream sources for real-time tracking and quarterly forecasting across the sales organisation.",
-    stats: [["+20%", "Revenue"], ["+35%", "Sales efficiency"], ["87%", "Forecast accuracy"]],
+    tag: "BI",
+    title: "Intelligent Sales Performance Analytics Dashboard",
+    desc: "Power BI dashboard integrating multiple sources to track performance, forecast trends, and surface actionable insights for leaders.",
+    stats: [["5+", "Sources"], ["20%", "Revenue ↑"], ["50+", "KPIs"]],
   },
   {
     img: imgAuto,
     no: "03",
-    tag: "Automation",
-    title: "Expense Management System",
-    desc: "Python automation handling expense categorisation, anomaly detection, and reporting — integrated with cloud storage for budget alerts.",
-    stats: [["−90%", "Manual entry"], ["−95%", "Errors"], ["15+ hrs", "Saved / mo"]],
+    tag: "ML",
+    title: "AI-Powered Customer Churn Prediction System",
+    desc: "Machine learning model (Random Forest + XGBoost) with an early warning workflow to reduce churn and improve retention decisions.",
+    stats: [["91%", "Accuracy"], ["28%", "Churn ↓"], ["50K+", "Records"]],
   },
   {
     img: imgVision,
     no: "04",
-    tag: "Computer Vision",
-    title: "CNN Defect Detection",
-    desc: "Convolutional model deployed for quality control in manufacturing, processing 1,000+ images per day with real-time inference.",
-    stats: [["94%", "Accuracy"], ["−70%", "Inspection time"], ["1k+", "Images / day"]],
+    tag: "Web",
+    title: "Marketing Website (Performance + SEO)",
+    desc: "Responsive website with optimized Core Web Vitals, clean content structure, and metadata built for discoverability.",
+    stats: [["SEO", "Metadata"], ["Fast", "Loads"], ["Mobile", "First"]],
   },
   {
     img: imgNlp,
     no: "05",
-    tag: "Natural Language",
-    title: "Sentiment Analysis Engine",
-    desc: "NLP pipeline analysing 100K+ customer reviews and social posts for brand reputation insights — informing product and support decisions.",
-    stats: [["100K+", "Documents"], ["89%", "Accuracy"], ["+15%", "CSAT lift"]],
+    tag: "Automation",
+    title: "Automated Expense Management & Reporting System",
+    desc: "Python automation for expense categorization, anomaly detection, and reporting with real-time budget visibility.",
+    stats: [["90%", "Time ↓"], ["15+", "Hours saved"], ["95%", "Errors ↓"]],
   },
   {
     img: imgEtl,
     no: "06",
-    tag: "Data Engineering",
-    title: "ETL Pipeline Architecture",
-    desc: "Enterprise pipelines moving 500K+ daily transactions across retail, healthcare, finance, and logistics — reducing latency 60%.",
-    stats: [["500K", "Txns / day"], ["−60%", "Latency"], ["98%", "Data accuracy"]],
+    tag: "CV",
+    title: "Computer Vision Object Recognition System",
+    desc: "CNN-based image classification for quality control, enabling fast defect detection with real-time inference workflows.",
+    stats: [["94%", "Accuracy"], ["70%", "Time ↓"], ["1K+", "Imgs/day"]],
   },
 ];
 
@@ -68,15 +68,15 @@ export function Projects() {
               Selected work
             </div>
             <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-              Six projects, <span className="font-serif-i italic text-muted-foreground">measurable lift.</span>
+              Projects with <span className="font-serif-i italic text-muted-foreground">measurable impact.</span>
             </h2>
           </div>
           <p className="text-sm text-muted-foreground max-w-xs">
-            A cross-section of recent engagements. Numbers verified with clients.
+            AI/ML, dashboards, automation, and data engineering.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden border hairline">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
           {projects.map((p, i) => (
             <motion.article
               key={p.title}
@@ -84,9 +84,9 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ delay: (i % 2) * 0.08 }}
-              className="group bg-background p-7 hover:bg-surface/50 transition-colors"
+              className="group"
             >
-              <div className="aspect-[16/10] rounded-xl overflow-hidden border hairline mb-6 bg-surface">
+              <div className="aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-surface">
                 <img
                   src={p.img}
                   alt={p.title}
@@ -106,7 +106,7 @@ export function Projects() {
               <h3 className="font-display text-2xl font-semibold tracking-tight mb-3">{p.title}</h3>
               <p className="text-[15px] text-muted-foreground leading-relaxed mb-6">{p.desc}</p>
 
-              <div className="grid grid-cols-3 gap-4 border-t hairline pt-5">
+              <div className="grid grid-cols-3 gap-4">
                 {p.stats.map(([v, l]) => (
                   <div key={l}>
                     <div className="font-display text-lg font-semibold">{v}</div>

@@ -4,11 +4,22 @@ const roles = [
   {
     period: "2019 — Present",
     title: "Senior AI & Automation Consultant",
+    org: "Freelance (Contract)",
+    points: [
+      "Designed and deployed 25+ machine learning models for predictive analytics, segmentation, and forecasting — delivering 30–50% efficiency gains.",
+      "Developed automation scripts and RPA solutions that eliminated 15–20 hours of manual work weekly per client while processing 100K+ records with high accuracy.",
+      "Engineered ETL pipelines and integrations handling 500K+ daily transactions, reducing processing time by 60%.",
+      "Built dashboards and real-time analytics platforms supporting data-driven decision-making for stakeholders.",
+    ],
+  },
+  {
+    period: "2019 — Present",
+    title: "Full-Stack Web Developer",
     org: "Independent Practice",
     points: [
-      "Designed and deployed 25+ ML models, achieving 30–50% efficiency gains.",
-      "Engineered ETL pipelines processing 500K+ daily transactions.",
-      "Managed 30+ clients across retail, healthcare, finance, and logistics — 95% retention.",
+      "Built responsive web applications with React and modern UI tooling.",
+      "Designed and shipped backend APIs with Node.js and Express.",
+      "Delivered authentication, database integration, and production deployments for client projects.",
     ],
   },
   {
@@ -16,27 +27,41 @@ const roles = [
     title: "Lead Data Analyst & ML Researcher",
     org: "Self-Employed",
     points: [
-      "Implemented ML algorithms reaching 92% average model accuracy.",
-      "Built executive dashboards tracking 50+ KPIs — surfaced $2M+ in savings.",
-      "Lifted data accuracy from 75% to 97% through governance frameworks.",
+      "Conducted advanced analytics projects (statistical modeling, hypothesis testing, predictive analytics) improving business insights by 35–45%.",
+      "Researched and implemented ML algorithms for classification, regression, and clustering with 92% average model accuracy.",
+      "Designed executive dashboards tracking 50+ KPIs in Power BI and Tableau, identifying $2M+ in savings and opportunities.",
+      "Built automated reporting pipelines that reduced reporting turnaround by 80%.",
     ],
   },
   {
     period: "2019 — Present",
-    title: "Data Collection & QA Specialist",
-    org: "Independent / Remote",
+    title: "Virtual Assistant & Project Coordinator",
+    org: "Self-Employed",
     points: [
-      "Curated 10,000+ images and datasets for ML training pipelines.",
-      "Maintained 99% data accuracy across 50,000+ annotated points.",
+      "Supported 15+ executives and founders with calendar, email coordination, and client communications.",
+      "Developed SOPs, workflow diagrams, and training materials that reduced onboarding time by 40%.",
+      "Coordinated cross-functional projects with Agile practices using Asana and Trello, maintaining a strong on-time delivery record.",
+      "Managed CRM workflows and reporting, improving conversion rates and pipeline visibility.",
+    ],
+  },
+  {
+    period: "2019 — Present",
+    title: "Data Collection Specialist & Quality Assurance Analyst",
+    org: "Independent Contributor (Remote)",
+    points: [
+      "Captured and curated 10,000+ high-quality images and datasets for AI training under strict quality standards.",
+      "Implemented quality checks and validation workflows achieving 99% data accuracy across 50,000+ annotated points.",
+      "Executed field data collection with accurate metadata and consistent capture guidelines.",
     ],
   },
   {
     period: "2019 — 2021",
-    title: "Computer Instructor & Trainer",
+    title: "Computer Instructor & Technology Trainer",
     org: "Sacred Heart Computer & Vocational Centre",
     points: [
-      "Trained 150+ students with 95% satisfaction, 85% certification rate.",
-      "Authored 20+ SOPs and training guides for software tools.",
+      "Designed training programs covering digital literacy, programming fundamentals (Python, Java), and data analysis basics.",
+      "Trained 150+ students, achieving strong satisfaction and completion outcomes.",
+      "Maintained computer lab operations and resolved technical issues supporting daily learning activities.",
     ],
   },
 ];
@@ -50,11 +75,11 @@ export function Experience() {
             Experience
           </div>
           <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05] max-w-3xl">
-            Six years building <span className="font-serif-i italic text-muted-foreground">things that ship.</span>
+            6+ years delivering <span className="font-serif-i italic text-muted-foreground">AI, analytics, and web.</span>
           </h2>
         </div>
 
-        <div>
+        <div className="space-y-12">
           {roles.map((r, i) => (
             <motion.div
               key={r.title}
@@ -62,7 +87,7 @@ export function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06 }}
-              className="grid md:grid-cols-[180px_1fr] gap-6 md:gap-12 py-8 border-t hairline last:border-b"
+              className="grid md:grid-cols-[180px_1fr] gap-6 md:gap-12"
             >
               <div className="font-mono-jb text-xs text-muted-foreground pt-1">
                 {r.period}
@@ -83,7 +108,7 @@ export function Experience() {
           ))}
         </div>
 
-        <div className="mt-16 grid md:grid-cols-[180px_1fr] gap-6 md:gap-12 py-8 border-t hairline">
+        <div className="mt-16 grid md:grid-cols-[180px_1fr] gap-6 md:gap-12 py-8">
           <div className="font-mono-jb text-xs text-muted-foreground pt-1">2020 — 2025</div>
           <div>
             <div className="font-mono-jb text-[10px] uppercase tracking-[0.14em] text-accent mb-2">Education</div>
@@ -92,9 +117,18 @@ export function Experience() {
               Federal University of Technology, Owerri
             </div>
             <p className="text-sm text-muted-foreground mt-3 max-w-2xl">
-              Coursework: Machine Learning, Data Structures &amp; Algorithms, Database Systems,
-              Artificial Intelligence, Statistical Analysis, Software Engineering.
+              Coursework: Machine Learning, Data Structures &amp; Algorithms, Database Management Systems,
+              Artificial Intelligence, Statistical Analysis, Software Engineering, Web Development.
             </p>
+            <div className="mt-8">
+              <h4 className="font-display text-lg font-semibold tracking-tight">Diploma in Computer Operations</h4>
+              <div className="text-sm text-muted-foreground mt-1">
+                Sacred Heart Computer &amp; Vocational Centre · 2018
+              </div>
+              <p className="text-sm text-muted-foreground mt-3 max-w-2xl">
+                Focus: Computer Hardware/Software, Office Productivity, Digital Literacy, Graphic Design.
+              </p>
+            </div>
           </div>
         </div>
       </div>

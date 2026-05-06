@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/BrandIcons";
+import portrait from "@/assets/michael-bw.jpg";
 
 export function Contact() {
   return (
@@ -41,7 +42,7 @@ export function Contact() {
           </div>
         </motion.div>
 
-        <div className="grid sm:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border hairline">
+        <div className="grid sm:grid-cols-3 gap-10">
           {[
             { Icon: Mail, label: "Email", value: "uchemichaelbartholomew@gmail.com", href: "mailto:uchemichaelbartholomew@gmail.com" },
             { Icon: Phone, label: "Phone", value: "+234 813 200 3036", href: "tel:+2348132003036" },
@@ -50,7 +51,7 @@ export function Contact() {
             <a
               key={c.label}
               href={c.href}
-              className="bg-background p-6 hover:bg-surface/50 transition-colors block group"
+              className="block group"
             >
               <c.Icon size={16} className="text-muted-foreground group-hover:text-accent transition-colors mb-4" />
               <div className="font-mono-jb text-[10px] uppercase tracking-[0.14em] text-muted-foreground mb-1.5">{c.label}</div>
@@ -68,8 +69,12 @@ export function Footer() {
     <footer className="border-t hairline py-10 px-6">
       <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-5">
         <div className="flex items-center gap-2.5">
-          <span className="inline-grid place-items-center h-6 w-6 rounded-md bg-foreground text-background text-[10px] font-semibold">M</span>
-          <span className="text-sm">Michael Uche</span>
+          <img
+            src={portrait}
+            alt="Uche Michael Ikenna"
+            className="h-6 w-6 rounded-md object-cover"
+          />
+          <span className="text-sm">Uche Michael Ikenna</span>
         </div>
         <div className="text-xs text-muted-foreground font-mono-jb">
           © {new Date().getFullYear()} Uche Michael Ikenna · All rights reserved.

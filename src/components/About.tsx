@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const principles = [
-  { n: "01", t: "Outcome-led", d: "Every model, dashboard, or pipeline ships against a measurable business KPI — never built for its own sake." },
-  { n: "02", t: "Production-first", d: "I optimise for systems that hold up in production: monitored, observable, and built to be handed off." },
-  { n: "03", t: "Quiet pragmatism", d: "Right-sized tooling. The simplest model that meets the bar wins, every time." },
-  { n: "04", t: "Tight feedback loops", d: "Weekly demos, working software early, decisions made on data — not opinions." },
+  { n: "01", t: "Outcome-led", d: "Every model, dashboard, or web app ships against a measurable business goal." },
+  { n: "02", t: "Production-first", d: "I optimize for systems that hold up in production: reliable, monitored, and easy to hand off." },
+  { n: "03", t: "Right-sized tooling", d: "The simplest approach that meets the bar wins — with clean implementation and testing." },
+  { n: "04", t: "Tight feedback loops", d: "Weekly demos, early delivery, and decisions made on data — not opinions." },
 ];
 
 export function About() {
@@ -23,10 +23,10 @@ export function About() {
 
           <div>
             <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-12 max-w-2xl">
-              Based in Lagos, working with teams worldwide. I've delivered 25+ ML models,
-              engineered ETL pipelines moving 500K+ daily transactions, and shipped 20+
-              executive dashboards. The common thread is a focus on results that
-              decision-makers can act on.
+              Based in Lagos, working with teams worldwide. I build end-to-end solutions across web
+              development, AI &amp; machine learning, automation, and data analytics — from clean UIs and
+              APIs to predictive models and executive dashboards.
+              <span className="text-foreground"> Founder of Uchemike-Tech</span> (formerly MB-Tech).
             </p>
 
             <div className="grid sm:grid-cols-2 gap-x-10 gap-y-10">

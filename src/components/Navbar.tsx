@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import portrait from "@/assets/michael-bw.jpg";
 
 const links = [
   { href: "#work", label: "Work" },
@@ -27,8 +28,12 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2.5 font-medium">
-          <span className="inline-grid place-items-center h-7 w-7 rounded-md bg-foreground text-background text-xs font-semibold">M</span>
-          <span className="text-sm tracking-tight">Michael Uche</span>
+          <img
+            src={portrait}
+            alt="Uche Michael Ikenna"
+            className="h-7 w-7 rounded-md object-cover"
+          />
+          <span className="text-sm tracking-tight">Uche Michael Ikenna</span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-[13px] text-muted-foreground">
           {links.map((l) => (

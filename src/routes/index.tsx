@@ -11,14 +11,22 @@ import { Contact, Footer } from "@/components/Contact";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Michael Uche — AI/ML Engineer, Web Developer & Data Analyst" },
+      { title: "Uche Michael Ikenna — Web Developer | AI & ML Engineer | Data Analyst" },
       {
         name: "description",
         content:
-          "Michael Ikenna Uche is an AI/ML engineer and data analyst building intelligent systems, ETL pipelines, and analytics that drive 30–50% efficiency gains.",
+          "Uche Michael Ikenna is a web developer, AI & ML engineer, and data analyst with 6+ years of experience building intelligent systems, automation, dashboards, and full-stack web apps.",
       },
-      { property: "og:title", content: "Michael Uche — AI/ML Engineer & Data Analyst" },
-      { property: "og:description", content: "Portfolio of Michael Uche: machine learning, automation, and analytics projects." },
+      {
+        name: "keywords",
+        content:
+          "Uche Michael Ikenna, Uchemike-Tech, web developer, AI engineer, machine learning, data analyst, React, Node.js, Power BI, Python",
+      },
+      { property: "og:title", content: "Uche Michael Ikenna — Web Developer | AI/ML Engineer | Data Analyst" },
+      {
+        property: "og:description",
+        content: "Portfolio of Uche Michael Ikenna: web apps, machine learning solutions, automation, and analytics.",
+      },
     ],
   }),
   component: Index,

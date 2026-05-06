@@ -7,11 +7,26 @@ const groups: { title: string; skills: Skill[] }[] = [
     title: "Languages",
     skills: [
       { name: "Python", slug: "python" },
+      { name: "JavaScript", slug: "javascript" },
       { name: "TypeScript", slug: "typescript" },
       { name: "SQL", slug: "mysql" },
       { name: "Java", slug: "openjdk" },
       { name: "R", slug: "r" },
-      { name: "JavaScript", slug: "javascript" },
+    ],
+  },
+  {
+    title: "Web",
+    skills: [
+      { name: "React", slug: "react" },
+      { name: "Next.js", slug: "nextdotjs" },
+      { name: "React Router", slug: "reactrouter" },
+      { name: "Redux", slug: "redux" },
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "Express", slug: "express" },
+      { name: "HTML5", slug: "html5" },
+      { name: "CSS3", slug: "css3" },
+      { name: "Tailwind CSS", slug: "tailwindcss" },
+      { name: "Vite", slug: "vite" },
     ],
   },
   {
@@ -21,15 +36,17 @@ const groups: { title: string; skills: Skill[] }[] = [
       { name: "PyTorch", slug: "pytorch" },
       { name: "scikit-learn", slug: "scikitlearn" },
       { name: "Keras", slug: "keras" },
+      { name: "XGBoost", slug: "xgboost" },
       { name: "OpenCV", slug: "opencv" },
-      { name: "Hugging Face", slug: "huggingface" },
     ],
   },
   {
-    title: "Data & Analytics",
+    title: "Data & BI",
     skills: [
       { name: "Pandas", slug: "pandas" },
       { name: "NumPy", slug: "numpy" },
+      { name: "Excel", slug: "microsoftexcel" },
+      { name: "Google Sheets", slug: "googlesheets" },
       { name: "Apache Spark", slug: "apachespark" },
       { name: "Power BI", slug: "powerbi" },
       { name: "Tableau", slug: "tableau" },
@@ -37,36 +54,27 @@ const groups: { title: string; skills: Skill[] }[] = [
     ],
   },
   {
-    title: "Cloud & Infra",
+    title: "Cloud & DevOps",
     skills: [
       { name: "AWS", slug: "amazonwebservices" },
-      { name: "Google Cloud", slug: "googlecloud" },
       { name: "Azure", slug: "microsoftazure" },
+      { name: "Google Cloud", slug: "googlecloud" },
       { name: "Docker", slug: "docker" },
       { name: "Git", slug: "git" },
       { name: "GitHub", slug: "github" },
+      { name: "CI/CD", slug: "githubactions" },
     ],
   },
   {
-    title: "Web",
-    skills: [
-      { name: "React", slug: "react" },
-      { name: "Next.js", slug: "nextdotjs" },
-      { name: "Node.js", slug: "nodedotjs" },
-      { name: "Tailwind", slug: "tailwindcss" },
-      { name: "HTML5", slug: "html5" },
-      { name: "Vite", slug: "vite" },
-    ],
-  },
-  {
-    title: "Operations",
+    title: "Management",
     skills: [
       { name: "Jira", slug: "jira" },
+      { name: "Trello", slug: "trello" },
       { name: "Asana", slug: "asana" },
+      { name: "Monday.com", slug: "mondaydotcom" },
       { name: "Notion", slug: "notion" },
+      { name: "Postman", slug: "postman" },
       { name: "Slack", slug: "slack" },
-      { name: "Figma", slug: "figma" },
-      { name: "Linear", slug: "linear" },
     ],
   },
 ];
@@ -81,15 +89,15 @@ export function Skills() {
               Expertise
             </div>
             <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-              The toolkit, <span className="font-serif-i italic text-muted-foreground">earned in production.</span>
+              Skills across <span className="font-serif-i italic text-muted-foreground">web, AI, and analytics.</span>
             </h2>
           </div>
           <p className="text-sm text-muted-foreground max-w-xs">
-            A pragmatic stack — chosen for reliability, observability, and team handoff.
+            Web development, machine learning, automation, and business intelligence.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border hairline">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14">
           {groups.map((g, gi) => (
             <motion.div
               key={g.title}
@@ -97,7 +105,7 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: gi * 0.04 }}
-              className="bg-background p-7"
+              className="py-2"
             >
               <div className="flex items-center justify-between mb-6">
                 <div className="font-display text-sm font-medium">{g.title}</div>
@@ -112,7 +120,7 @@ export function Skills() {
                     className="group flex flex-col items-center gap-2.5"
                     title={s.name}
                   >
-                    <div className="h-10 w-10 grid place-items-center rounded-lg surface hairline border group-hover:border-strong group-hover:bg-surface-2 transition-all">
+                    <div className="h-10 w-10 grid place-items-center rounded-lg bg-background/40 group-hover:bg-background/60 transition-colors">
                       <img
                         src={`https://cdn.simpleicons.org/${s.slug}/ffffff`}
                         alt={s.name}

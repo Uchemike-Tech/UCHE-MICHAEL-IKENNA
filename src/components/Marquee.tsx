@@ -1,12 +1,12 @@
 const items = [
+  "Web Development",
+  "React",
+  "Node.js APIs",
   "Machine Learning",
+  "Data Analytics",
+  "Power BI & Tableau",
   "Computer Vision",
-  "Natural Language Processing",
-  "Data Engineering",
-  "MLOps",
-  "Predictive Analytics",
-  "Business Intelligence",
-  "Process Automation",
+  "NLP",
 ];
 
 export function Marquee() {

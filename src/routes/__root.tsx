@@ -1,6 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import faviconUrl from "../assets/michael-bw.jpg?url";
 
 function NotFoundComponent() {
   return (
@@ -29,20 +30,35 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Uche Michael Ikenna — Web Developer | AI & ML Engineer | Data Analyst" },
+      {
+        name: "description",
+        content:
+          "Portfolio of Uche Michael Ikenna — web developer, AI & ML engineer, and data analyst building scalable systems, automation, and analytics.",
+      },
+      { name: "author", content: "Uche Michael Ikenna" },
+      { name: "robots", content: "index,follow" },
+      {
+        name: "keywords",
+        content:
+          "Uche Michael Ikenna, Uchemike-Tech, web developer, AI engineer, machine learning engineer, data analyst, React, Node.js",
+      },
+      { property: "og:title", content: "Uche Michael Ikenna — Web Developer | AI/ML Engineer | Data Analyst" },
+      {
+        property: "og:description",
+        content:
+          "Portfolio of Uche Michael Ikenna — web development, machine learning, automation, and data analytics.",
+      },
+      { property: "og:site_name", content: "Uche Michael Ikenna" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "icon", href: faviconUrl },
     ],
   }),
   shellComponent: RootShell,
