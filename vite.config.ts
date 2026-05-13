@@ -11,6 +11,12 @@ export default defineConfig({
   ],
   build: {
     outDir: "dist",
+    rollupOptions: {
+      external: [],
+    },
   },
   publicDir: "public",
+  ssr: {
+    external: ["react", "react-dom"],
+  },
 });
