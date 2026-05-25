@@ -13,7 +13,4 @@ export default defineConfig({
     outDir: "dist",
   },
   publicDir: "public",
-  ssr: {
-    noExternal: ["@tanstack/react-start", "@tanstack/react-router"],
-  },
 });
