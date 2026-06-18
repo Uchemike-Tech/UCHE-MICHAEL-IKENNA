@@ -9,14 +9,14 @@ export function ResumeTrigger({ children }: { children: React.ReactNode }) {
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0 gap-0">
-        <div className="flex items-center justify-between px-6 py-3 border-b hairline">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <FileText size={14} />
-            Uche_Michael_Ikenna_Resume.pdf
+        <div className="flex items-center justify-between px-4 border-b hairline h-10">
+          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+            <FileText size={12} />
+            Resume.pdf
           </div>
           <a href={RESUME_URL} download>
-            <Button variant="default" size="sm" className="gap-1.5">
-              <Download size={14} /> Download
+            <Button variant="default" size="sm" className="gap-1.5 h-7 text-xs px-3">
+              <Download size={12} /> Download
             </Button>
           </a>
         </div>
