@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import portrait from "@/assets/michael-bw.jpg";
+import { ResumeTrigger } from "@/components/ResumePreview";
 
 const links = [
   { href: "#work", label: "Work" },
@@ -42,14 +43,11 @@ export function Navbar() {
             </a>
           ))}
         </nav>
-        <a
-          href="/Uche_Michael_Ikenna_Resume.pdf"
-          target="_blank"
-          rel="noreferrer"
-          className="hidden md:inline-flex btn-primary"
-        >
-          Resume
-        </a>
+        <ResumeTrigger>
+          <button className="hidden md:inline-flex btn-primary cursor-pointer">
+            Resume
+          </button>
+        </ResumeTrigger>
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden grid place-items-center h-9 w-9 rounded-full hairline-strong border bg-surface"
@@ -65,14 +63,11 @@ export function Navbar() {
               {l.label}
             </a>
           ))}
-          <a
-            href="/Uche_Michael_Ikenna_Resume.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="btn-primary text-center mt-2"
-          >
-            Resume
-          </a>
+          <ResumeTrigger>
+            <button className="btn-primary text-center mt-2 w-full cursor-pointer">
+              Resume
+            </button>
+          </ResumeTrigger>
         </div>
       )}
     </header>
