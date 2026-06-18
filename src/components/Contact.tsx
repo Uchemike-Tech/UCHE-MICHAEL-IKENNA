@@ -64,10 +64,8 @@ export function Contact() {
           </p>
           <div className="mt-9 inline-flex flex-wrap items-center justify-center gap-3">
             <a
-              href="mailto:uchemichaelbartholomew@gmail.com"
-              className="btn-primary inline-flex items-center gap-1.5"
-            >
-              Start a conversation <ArrowUpRight size={14} />
+              href="https://wa.me/2348132003036?text=interested%20to%20build%20a%20project%2C%20my%20name%20is" target="_blank" rel="noreferrer" className="btn-primary inline-flex items-center gap-1.5">
+              WhatsApp <ArrowUpRight size={14} />
             </a>
             <a
               href="https://www.linkedin.com/in/michael-uche-731835368/"
