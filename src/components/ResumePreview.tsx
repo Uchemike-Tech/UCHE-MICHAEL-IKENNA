@@ -8,15 +8,11 @@ export function ResumeTrigger({ children }: { children: React.ReactNode }) {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0 gap-0">
-        <div className="flex items-center justify-between px-4 border-b hairline h-10">
-          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-            <FileText size={12} />
-            Resume.pdf
-          </div>
+      <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0 gap-0 overflow-hidden">
+        <div className="flex items-center justify-end px-2 border-b hairline h-8">
           <a href={RESUME_URL} download>
-            <Button variant="default" size="sm" className="gap-1.5 h-7 text-xs px-3">
-              <Download size={12} /> Download
+            <Button variant="default" size="sm" className="gap-1 h-6 text-[11px] px-2.5">
+              <Download size={11} /> Download
             </Button>
           </a>
         </div>
